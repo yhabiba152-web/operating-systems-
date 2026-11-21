@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Operating Systems – Explore the Digital World</title>
+<style>
+.nm{display:block;margin:10px auto;padding:12px 16px;border-radius:30px;border:3px solid var(--y);font:inherit;font-size:1rem;width:min(300px,90%);text-align:center}
+.err{color:#ffd9a0;font-size:.85rem;min-height:1.3em}
+.cert{background:#fff;border:8px double var(--y);border-radius:18px;padding:22px 14px;text-align:center;margin:10px 0}
+.cert h1{color:var(--p);font-size:clamp(1.6rem,7vw,2.6rem);margin:6px 0;word-break:break-word}.cert p{margin:4px 0}
+@media print{body *{visibility:hidden}#cert,#cert *{visibility:visible}#cert{position:absolute;left:0;top:0;width:100%}}
+.inhome header{display:none}
+#home .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.xs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:14px}
+.cred{margin-top:14px;background:#ffffff1f;display:inline-block;padding:8px 18px;border-radius:16px;font-size:.9rem;line-height:1.6}.cred b{color:var(--y)}
+.ft{text-align:center;padding:14px;font-size:.8rem;color:var(--d);opacity:.8}
+.pt{display:inline-block;background:var(--y);color:var(--d);font-weight:800;border-radius:20px;padding:3px 12px;font-size:.78rem;margin-bottom:8px}
+.mp{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}.mp button,.mg button{background:var(--l);border:2px solid var(--p);border-radius:14px;padding:10px;color:inherit;font-weight:700}
+.mp b{display:grid;place-items:center;width:34px;height:34px;margin:0 auto 4px;border-radius:50%;background:var(--p);color:#fff}
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:8px}.mg span{display:block;font-size:1.7rem}
+.note{background:#fff3e0;border-left:5px solid var(--y);border-radius:10px;padding:8px 12px}.sub2{color:var(--p);border-bottom:2px dashed var(--y);padding-bottom:4px}
+.bk{position:absolute;bottom:-40px;border-radius:50%;background:#ffffff26;animation:rise 7s linear infinite}@keyframes rise{to{transform:translateY(-440px)}}
+:root{--p:#0f9d8a;--b:#22b573;--y:#ff9f1c;--d:#0b3b3c;--l:#effaf6;--g:#1fa86b;--r:#e5484d}
+*{box-sizing:border-box;margin:0}
+body{font-family:"Segoe UI",Tahoma,system-ui,sans-serif;background:var(--l);color:var(--d);min-height:100vh}
+button{font:inherit;cursor:pointer;border:0}
+button:focus-visible{outline:3px solid var(--y);outline-offset:2px}
+.ar{direction:rtl;color:#35605c;font-size:.92em;margin-top:3px;line-height:1.6}
+.en{font-weight:600;line-height:1.45}
+header{position:sticky;top:0;z-index:9;background:var(--d);color:#fff}
+.nav{display:flex;align-items:center;gap:6px;padding:8px 12px;flex-wrap:wrap}
+.logo{font-weight:800;color:var(--y);margin-right:auto}
+.nav button{background:transparent;color:#fff;padding:7px 12px;border-radius:20px;font-size:.9rem}
+.nav button.on{background:var(--y);color:var(--d);font-weight:700}
+#bar{height:5px;background:#ffffff30}#bar i{display:block;height:100%;width:0;background:var(--y);transition:width .5s}
+.pg{display:none;max-width:980px;margin:auto;padding:16px}.pg.on{display:block}
+.btn{background:linear-gradient(135deg,var(--p),var(--b));color:#fff;padding:12px 22px;border-radius:30px;font-weight:700;box-shadow:0 4px 0 #0a6b5e;margin:4px}
+.btn.y{background:var(--y);color:var(--d);box-shadow:0 4px 0 #c26f00}
+.btn:disabled{opacity:.4}.btn:active{transform:translateY(2px)}
+#home{padding:0;max-width:none}
+.hero{background:radial-gradient(circle at 20% 10%,#2dd4bf 0,transparent 40%),radial-gradient(circle at 90% 80%,#22b573 0,transparent 45%),var(--d);color:#fff;text-align:center;padding:32px 16px 40px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff10 1px,transparent 1px),linear-gradient(90deg,#ffffff10 1px,transparent 1px);background-size:36px 36px}
+.hero>*{position:relative}
+.hero h1{font-size:clamp(1.8rem,6vw,3.2rem);line-height:1.1;margin:10px 0}
+.hero h1 span{color:var(--y)}
+.chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.chips span{background:#ffffff22;padding:5px 12px;border-radius:20px;font-size:.85rem}
+.lap{width:min(320px,80%);margin:10px auto;animation:fl 4s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-10px)}}
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:980px;margin:-20px auto 20px;padding:0 16px;position:relative}
+.mc{background:#fff;border-radius:18px;padding:16px;text-align:center;box-shadow:0 6px 18px #0f9d8a22;border-top:5px solid var(--y)}
+.mc .ic{font-size:2.2rem}
+.card{background:#fff;border-radius:20px;padding:18px;box-shadow:0 6px 20px #0f9d8a22}
+.sl{animation:in .4s}@keyframes in{from{opacity:0;transform:translateX(20px)}}
+.sh{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.big{font-size:2.6rem;background:linear-gradient(135deg,var(--p),var(--b));border-radius:18px;width:68px;height:68px;display:grid;place-items:center;flex:none}
+.sh h2{font-size:1.4rem}
+.dia{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;margin:14px 0}
+.node{background:var(--l);border:2px solid var(--b);border-radius:16px;padding:10px;text-align:center;min-width:92px;cursor:pointer;transition:.2s}
+.node:hover,.node.pop{transform:scale(1.08);background:var(--y)}
+.node b{display:block;font-size:1.8rem}
+.arr{font-size:1.6rem;color:var(--p);animation:pu 1.2s infinite}@keyframes pu{50%{transform:scale(1.3)}}
+.os{background:linear-gradient(135deg,var(--p),var(--b));color:#fff;border-color:var(--y)}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:10px}
+.fc{background:var(--l);border-radius:16px;padding:12px;border:2px dashed var(--b);text-align:left;color:inherit}
+.fc.open{background:#fff8dc;border-color:var(--y);border-style:solid}
+.fc .n{background:var(--y);border-radius:50%;width:26px;height:26px;display:inline-grid;place-items:center;font-weight:800;margin-right:6px}
+.fc .x{display:none;margin-top:8px;font-size:.88rem;border-top:1px solid #ccc;padding-top:6px}.fc.open .x{display:block}
+.cg{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.chip{background:linear-gradient(135deg,#fff,var(--l));border:2px solid var(--p);border-radius:16px;padding:10px 14px;text-align:center;flex:1;min-width:120px;color:inherit}
+.chip b{display:block;font-size:1.9rem}.chip.on{background:var(--y);animation:bo .4s}
+@keyframes bo{40%{transform:scale(1.12) rotate(-3deg)}}
+.spot{background:var(--d);color:#fff;border-radius:16px;padding:12px;text-align:center;margin-top:8px;min-height:84px}
+.spot .ar{color:#bff0e4}
+.ctl{display:flex;justify-content:space-between;align-items:center;margin-top:14px;flex-wrap:wrap;gap:6px}
+.dots{display:flex;gap:5px}.dots i{cursor:pointer;width:9px;height:9px;border-radius:50%;background:#b6e3d8}.dots i.on{background:var(--p);transform:scale(1.4)}
+.stage{aspect-ratio:16/10;border-radius:20px 20px 0 0;transition:background .6s;position:relative;overflow:hidden}
+.stage:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff14 1px,transparent 1px),linear-gradient(90deg,#ffffff14 1px,transparent 1px);background-size:32px 32px;animation:gm 6s linear infinite}
+@keyframes gm{to{background-position:32px 32px}}
+@keyframes pop{from{opacity:0;transform:scale(0) rotate(-30deg)}to{opacity:1}}
+@keyframes fl{50%{transform:translateY(-8px)}}
+.sub{background:#07282a;color:#fff;padding:10px 14px;text-align:center;border-radius:0 0 20px 20px;min-height:84px}.sub .ar{color:#ffd9a0}
+.sc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:34px 8px 6px}
+.ttl{position:absolute;top:10px;left:0;background:var(--y);color:var(--d);font-weight:800;padding:4px 14px;border-radius:0 20px 20px 0;animation:sli .6s both;font-size:.85rem;z-index:2}
+@keyframes sli{from{transform:translateX(-110%)}}
+.r2{display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.ob{background:#ffffff24;border:2px solid #ffffff66;border-radius:14px;padding:6px 8px;color:#fff;text-align:center;font-size:.72rem;font-weight:700;min-width:62px}
+.ob b{display:block;font-size:1.8rem}
+.ob.os{background:var(--y);color:var(--d);box-shadow:0 0 24px var(--y)}.ob.os .ar{color:var(--d)!important}
+.bub{background:#fff;color:var(--d);border-radius:16px;padding:6px 14px;font-weight:700;font-size:.85rem;animation:pop .5s .4s both}
+.rb{animation:fl 2.5s ease-in-out infinite}.bl{transform-origin:50px 42px;animation:blk 3s infinite}@keyframes blk{94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.wv{transform-origin:80px 76px;animation:wvv .5s ease-in-out infinite alternate}@keyframes wvv{to{transform:rotate(-50deg)}}
+.spin{display:block;animation:sp 3s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+.ln{position:relative;width:12%;min-width:34px;height:4px;background:#ffffff66;border-radius:3px}
+.ln i{position:absolute;top:-4px;width:12px;height:12px;border-radius:50%;background:var(--y);box-shadow:0 0 10px var(--y);animation:mv 1.6s linear infinite}@keyframes mv{from{left:0}to{left:100%}}
+@keyframes gl{50%{transform:scale(1.3);background:var(--y);color:var(--d)}}
+.road{position:relative;width:90%;height:50px;border-bottom:3px dashed #fff8;overflow:hidden}
+.car{position:absolute;bottom:2px;font-size:2.4rem;animation:dr 4s linear infinite}@keyframes dr{from{left:-15%}to{left:100%}}
+.cf{position:absolute;top:-14px;width:8px;height:12px;animation:fa 3s linear infinite}@keyframes fa{to{transform:translateY(340px) rotate(540deg)}}
+.card3{display:inline-block;animation:sw 1.5s ease-in-out infinite}@keyframes sw{50%{transform:translateX(14px) rotate(15deg)}}
+.vb{display:flex;gap:6px;align-items:center;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.sk{height:8px;background:#cdeee6;border-radius:5px;margin-top:10px;overflow:hidden}.sk i{display:block;height:100%;width:0;background:var(--p)}
+.tool{display:flex;gap:6px;justify-content:center;margin-bottom:8px}
+#igw{overflow:auto;border-radius:16px;background:#fff;max-height:70vh;border:2px solid var(--p)}
+.ig{width:900px;padding:20px;background:linear-gradient(180deg,#fff,var(--l))}
+.ig h3{background:var(--p);color:#fff;border-radius:12px;padding:8px 14px;margin:14px 0 10px;display:inline-block}
+.ig .row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ig .it{border-radius:14px;padding:10px;text-align:center;border:2px solid;font-size:.9rem}
+.ig .it b{font-size:1.8rem;display:block}
+.hub{background:var(--d);color:#fff;border-radius:20px;padding:14px;text-align:center;margin:8px auto;max-width:380px;border:4px solid var(--y)}
+.hub .ar{color:var(--y)}
+.q{font-size:1.1rem}.opts{display:grid;gap:8px;margin:12px 0}
+.o{background:var(--l);border:2px solid #b6e3d8;border-radius:14px;padding:10px 14px;text-align:left;color:inherit}
+.o.ok{background:#d9f7e8;border-color:var(--g)}.o.no{background:#ffe0e1;border-color:var(--r)}
+.fb{padding:10px;border-radius:12px;background:#fff8dc;margin-top:8px}
+.qe{font-size:3.4rem;text-align:center}
+@media(max-width:600px){.stage{aspect-ratio:4/3.4}.nav button{padding:6px 9px;font-size:.78rem}.pg{padding:10px}.stage{height:300px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}.stage s{opacity:1}}
+</style></head><body class="inhome">
+<header><div class="nav"><span class="logo">💻 OS Explorer</span>
+<button data-p="home" class="on">Home</button><button data-p="learn">Explore</button><button data-p="video">Video</button><button data-p="info">Infographic</button><button data-p="quiz">Quiz</button></div>
+<div id="bar"><i></i></div></header>
+
+<section id="home" class="pg on">
+<div class="hero">
+<div class="chips"><span>ICT</span><span>Prep 1 – الصف الأول الإعدادي</span><span>Unit 1</span><span>Lesson 3</span></div>
+<svg class="lap" viewBox="0 0 320 200"><rect x="40" y="10" width="240" height="150" rx="12" fill="#0b3b3c" stroke="#ff9f1c" stroke-width="4"/><rect x="52" y="22" width="216" height="126" rx="6" fill="#22b573"/><rect x="62" y="32" width="50" height="40" rx="6" fill="#fff" opacity=".9"/><rect x="62" y="80" width="50" height="40" rx="6" fill="#ff9f1c"/><rect x="124" y="32" width="134" height="14" rx="5" fill="#fff" opacity=".6"/><rect x="124" y="54" width="100" height="14" rx="5" fill="#fff" opacity=".4"/><circle cx="200" cy="105" r="22" fill="#0f9d8a"/><text x="200" y="113" font-size="24" text-anchor="middle">⚙️</text><path d="M10 170h300l-20 20H30z" fill="#cdeee6"/></svg>
+<h1>Operating Systems –<br><span>Explore the Digital World</span></h1>
+<div class="ar" style="color:#ffd9a0;font-size:1.1rem;text-align:center">نظم التشغيل – استكشف العالم الرقمي</div>
+<p style="margin:10px 0">Unit 1 – Lesson 3 • الوحدة الأولى – الدرس الثالث</p>
+<input id="nm" class="nm" maxlength="30" placeholder="Enter your name • اكتب اسمك" autocomplete="off">
+<div class="err" id="nerr"></div>
+<button class="btn y" id="startBtn">Start Learning</button>
+<div class="cred">Prepared by: <b>Habiba Yasser Abdullah</b></div>
+</div>
+</section>
+
+<section id="learn" class="pg"><div class="card sl" id="slide"></div>
+<div class="ctl"><button class="btn" id="prev">Previous</button><div class="dots" id="dots"></div><button class="btn y" id="next">Next</button></div></section>
+
+<section id="video" class="pg"><div class="card"><div class="sh"><div class="big">🎬</div><div><h2>Educational Video</h2><div class="ar">فيديو تعليمي</div></div></div>
+<div class="stage" id="stage"></div><div class="sub" id="sub"></div><div class="dots" id="vd" style="justify-content:center;margin-top:10px"></div>
+<div class="sk"><i id="vp"></i></div>
+<div class="vb"><button class="btn" id="vplay">Play</button><button class="btn y" id="vpause">Pause</button><button class="btn" id="vrep">Replay</button><button class="btn y" id="vvoice">🔊 Voice: On</button></div>
+<div class="ar" style="text-align:center" id="vst">اضغط Play لبدء الفيديو</div></div></section>
+
+<section id="info" class="pg"><div class="card"><div class="sh"><div class="big">🗺️</div><div><h2>Interactive Infographic</h2><div class="ar">إنفوجرافيك تفاعلي</div></div></div>
+<div class="tool"><button class="btn" id="zo">− Zoom out</button><button class="btn y" id="zr">Fit</button><button class="btn" id="zi">+ Zoom in</button></div>
+<div id="igw"><div class="ig" id="ig"></div></div></div></section>
+
+<section id="quiz" class="pg"><div class="card" id="qbox"></div></section>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const bi=(e,a)=>`<div class="en">${e}</div><div class="ar">${a}</div>`;
+const F=[
+["🎨","Provides a user interface","يوفر واجهة للمستخدم","Icons, windows and menus help you use the computer.","الأيقونات والنوافذ والقوائم تساعدك على استخدام الكمبيوتر."],
+["🔧","Manages hardware components","يدير المكونات المادية","It controls the keyboard, mouse, screen and printer.","يتحكم في لوحة المفاتيح والفأرة والشاشة والطابعة."],
+["▶️","Runs all software","يدير جميع البرمجيات","Programs and apps open and work through the OS.","تعمل البرامج والتطبيقات من خلال نظام التشغيل."],
+["🧠","Manages memory","يدير الذاكرة","It shares the memory between running programs.","يوزع الذاكرة بين البرامج التي تعمل."],
+["🛡️","Ensures security and protection","يضمن الأمن والحماية","It protects your data and your device.","يحمي بياناتك وجهازك."],
+["🗂️","Manage the file system","إدارة نظام الملفات","It stores, organizes and finds files and folders.","يخزن الملفات والمجلدات وينظمها ويبحث عنها."],
+["🙂","Helping the user accomplish their various tasks on the computer easily and smoothly","يساعد المستخدم على إنجاز مهامه المختلفة على الكمبيوتر بسهولة وسلاسة","Writing, browsing and playing become simple.","تصبح الكتابة والتصفح واللعب أمرًا سهلًا."]];
+const S=[
+{ic:"🗺️",t:"Lesson Map",a:"خريطة الدرس",map:1},
+{ic:"🧩",t:"Operating Systems",a:"نظم التشغيل",def:1},
+{ic:"⭐",t:"Key Functions of the Operating System",a:"وظائف نظام التشغيل",fn:1},
+{ic:"🖥️",t:"1 Personal computers (PCs)",a:"أجهزة الكمبيوتر الشخصية",b:[["Desktop and laptop computers use operating systems such as:","تُستخدم أجهزة الكمبيوتر المكتبية وأجهزة الكمبيوتر المحمولة أنظمة تشغيل مثل:"],[["🪟","Windows","Microsoft Windows"],["🍎","MacOS","macOS"],["🐧","Linux distributions","توزيعات مختلفة من Linux"]]]},
+{ic:"📱",t:"2 Mobile devices",a:"الأجهزة المحمولة",b:[["Smartphones and tablets rely on operating systems, such as:","تعتمد الهواتف الذكية والأجهزة اللوحية على أنظمة التشغيل، مثل:"],[["🍏","iOS by Apple","نظام iOS من شركة Apple"],["🤖","Android by Google","نظام Android من شركة Google"],["📲","Other mobile operating systems","أنظمة تشغيل الأجهزة المحمولة الأخرى"]]]},
+{ic:"🗄️",t:"3 Servers",a:"أجهزة الخوادم",b:[["Servers use operating systems, such as:","تستخدم أجهزة الخوادم أنظمة تشغيل، مثل:"],[["🐧","Linux (various distributions)","نظام Linux (بتوزيعاته المختلفة)"],["🪟","Microsoft Windows Server","نظام Microsoft Windows Server"]],["Specialized operating systems for server are used to manage network resources and deliver a range of services.","أنظمة التشغيل المتخصصة للخوادم تُستخدم لإدارة موارد الشبكة وتقديم خدماتها المختلفة."]]},
+{ic:"🎮",t:"4 Gaming consoles",a:"وحدات تحكم الألعاب",b:[["Gaming consoles such as:","وحدات تحكم الألعاب مثل:"],[["🟩","Xbox","Xbox"],["🔷","PlayStation","PlayStation"],["🔴","Nintendo Switch","Nintendo Switch"]],["They have operating systems tailored for gaming and multimedia applications.","تحتوي على أنظمة تشغيل مصممة خصيصًا لتطبيقات الألعاب والوسائط المتعددة."]]},
+{ic:"📺",t:"5 Smart TVs",a:"أجهزة التلفزيون الذكية",b:[["Smart TVs use operating systems such as:","تعمل أجهزة التلفزيون الذكية على أنظمة تشغيل مثل:"],[["🤖","Android TV","Android TV"],["📡","Tizen","Tizen"],["🌐","webOS","webOS"]],["These operating systems provide smart advantages such as:","أنظمة التشغيل هذه توفر ميزات ذكية، مثل:"],[["🎞️","Streaming services","خدمات البث"],["🧱","Applications","التطبيقات"],["📶","Internet connectivity","الاتصال بالإنترنت"]]]},
+{ic:"⌚",t:"6 Wearable devices",a:"الأجهزة القابلة للارتداء",b:[["Wearable devices such as:","الأجهزة القابلة للارتداء مثل:"],[["⌚","Smart watches","الساعات الذكية"],["🏃","Fitness trackers","أجهزة تتبع اللياقة البدنية"]],["They use operating systems specifically designed for their unique functions and requirements.","تستخدم أجهزتها أنظمة تشغيل مصممة خصيصًا لوظائفها المحددة ومتطلبات تلك الأجهزة."]]},
+{ic:"📡",t:"7 Network devices",a:"أجهزة الشبكة",b:[["Network devices such as: Routers and switches.","أجهزة الشبكة مثل: أجهزة التوجيه Routers والمحولات Switches."],[["📶","Routers","أجهزة التوجيه"],["🔀","Switches","المحولات"]],["They use operating systems to manage network settings and security features.","أجهزة الشبكة تستخدم أنظمة التشغيل لإدارة إعدادات الشبكة وميزات الأمان."]]},
+{ic:"🚗",t:"8 Automotive systems",a:"أنظمة السيارات",b:[["Modern cars and vehicles often have operating systems to control various functions such as:","غالبًا ما تحتوي السيارات والمركبات الحديثة على أنظمة تشغيل للتحكم في الوظائف المختلفة، مثل:"],[["🎶","Infotainment","أنظمة المعلومات والترفيه"],["🧭","Navigation","الملاحة"],["🛣️","Driver assistance technologies","تقنيات مساعدة السائق"]]]},
+{ic:"🏧",t:"9 Embedded systems",a:"الأنظمة المدمجة",b:[["Embedded systems, such as:","الأنظمة المدمجة مثل:"],[["🏧","Automated Teller Machines (ATM)","أجهزة الصراف الآلي"],["💳","Point of Sale Terminals (POS)","محطات نقاط البيع"]],["POS terminals: they are electronic devices that allow customers to pay for purchased products. They deduct the cost from their bank account instead of using cash.","محطات نقاط البيع هي عبارة عن جهاز إلكتروني يستطيع من خلاله العميل دفع ثمن المشتريات؛ ليتم خصم ثمنها من حسابه البنكي بدلًا من دفع ثمنها نقدًا."],["These embedded systems use operating systems to run.","هذه الأنظمة المدمجة تستخدم أنظمة تشغيل لكي تعمل."]]}];
+let studentName='';const esc=t=>t.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const nmv=()=>esc(studentName||'friend');
+$('#startBtn').onclick=()=>{const v=$('#nm').value.trim();if(!v){$('#nerr').textContent='Please enter your name first • من فضلك اكتب اسمك أولًا';$('#nm').focus();return}studentName=v;$('#nerr').textContent='';page('learn');show(0)};
+$('#nm').onkeydown=e=>{if(e.key=='Enter')$('#startBtn').click()};
+let cur=0,maxS=0,done={v:0,i:0,q:0};
+let qrun=false;function page(p){if(p=='quiz'&&!qrun)qStart();document.body.classList.toggle('inhome',p=='home');$$('.pg').forEach(e=>e.classList.toggle('on',e.id==p));$$('.nav button').forEach(b=>b.classList.toggle('on',b.dataset.p==p));
+ if(p!='video')vPause();if(p=='info'){done.i=1;fit()}if(p=='learn')show(cur);prog();scrollTo(0,0)}
+function prog(){$('#bar i').style.width=Math.min(100,(maxS+1)/S.length*50+done.v*15+done.i*15+done.q*20)+'%'}
+$$('.nav button').forEach(b=>b.onclick=()=>page(b.dataset.p));
+$$('[data-go]').forEach(b=>b.onclick=()=>page(b.dataset.go));
+const pt=i=>i==0?'🗺️ Lesson Map • خريطة الدرس':i==1?'Part 1 of 3 • Definition • التعريف':i==2?'Part 2 of 3 • Functions • الوظائف':`Part 3 of 3 • Examples ${i-2}/9 • الأمثلة`;
+const mapHTML=()=>`<div class="mp"><button onclick="show(1)"><b>1</b>Definition<div class="ar">التعريف</div></button><button onclick="show(2)"><b>2</b>Key Functions<div class="ar">الوظائف</div></button><button onclick="show(3)"><b>3</b>Examples (9)<div class="ar">الأمثلة (9)</div></button></div><div class="ar" style="text-align:center">Tap to jump • اضغط للانتقال</div><div class="xs"><button class="btn" onclick="page('video')">🎬 Watch Video<div class="ar" style="color:#fff">شاهد الفيديو</div></button><button class="btn y" onclick="page('info')">🗺️ View Infographic<div class="ar" style="color:var(--d)">الإنفوجرافيك</div></button><button class="btn" onclick="page('quiz')">🏆 Quiz<div class="ar" style="color:#fff">الاختبار</div></button></div><div class="mg">${S.slice(3).map((x,k)=>`<button onclick="show(${k+3})"><span>${x.ic}</span>${k+1}. ${x.t.slice(2)}<div class="ar">${x.a}</div></button>`).join('')}</div>`;
+function show(i){cur=i;maxS=Math.max(maxS,i);const s=S[i];let h=`<div class="pt">${pt(i)}</div><div class="sh"><div class="big">${s.ic}</div><div><h2>${s.t}</h2><div class="ar">${s.a}</div></div></div>`;
+ if(s.map)h+=`<div class="card" style="background:var(--y);margin-bottom:10px;text-align:center"><div class="en">👋 Hello, ${nmv()}! Let's explore operating systems.</div><div class="ar" style="color:var(--d)">أهلًا يا ${nmv()}! هيا نستكشف أنظمة التشغيل.</div></div>`+mapHTML();else if(s.def)h+=`<div class="card" style="background:var(--l)">${bi("Operating System: It is an interface between the user and hardware and software.","نظام التشغيل: هو واجهة بين المستخدم والأجهزة والبرامج.")}</div>
+ <div class="dia"><div class="node" onclick="this.classList.toggle('pop')"><b>🧑‍💻</b>User<div class="ar">المستخدم</div></div><span class="arr">⇄</span><div class="node os" onclick="this.classList.toggle('pop')"><b>🧩</b>Operating System<div class="ar">نظام التشغيل</div></div><span class="arr">⇄</span><div class="node" onclick="this.classList.toggle('pop')"><b>🔌</b>Hardware<div class="ar">الأجهزة</div></div><span class="arr">+</span><div class="node" onclick="this.classList.toggle('pop')"><b>📦</b>Software<div class="ar">البرامج</div></div></div>
+ <div class="ar" style="text-align:center">Tap the cards! • اضغط على البطاقات</div>
+ ${bi("Operating systems are necessary for running and managing various modern electronic and smart devices.","تعتبر أنظمة التشغيل ضرورية لتشغيل وإدارة الأجهزة الإلكترونية والأجهزة الذكية الحديثة المختلفة.")}`;
+ else if(s.fn)h+=`<div class="hub"><b>Key Functions of the Operating System</b><div class="ar">وظائف نظام التشغيل</div></div><div class="ar" style="text-align:center">⬇ Tap a card • اضغط على البطاقة ⬇</div><div class="fg">${F.map((f,k)=>`<button class="fc" onclick="this.classList.toggle('open')"><span class="n">${k+1}</span>${f[0]} ${bi(f[1],f[2])}<div class="x">${bi(f[3],f[4])}</div></button>`).join('')}</div>`;
+ else s.b.forEach((x,n)=>{if(typeof x[0]=='string'){const nx=s.b[n+1];const c=n==0?'':(nx&&typeof nx[0]!='string'?'sub2':'note');h+=`<div class="${c}" style="margin:10px 0">${bi(x[0],x[1])}</div>`}else h+=`<div class="cg">${x.map(c=>`<button class="chip" onclick="spot(this,'${c[0]}','${c[1].replace(/'/g,"\\'")}','${c[2]}')"><b>${c[0]}</b>${c[1]}<div class="ar">${c[2]}</div></button>`).join('')}</div>`});
+ if(s.b)h+=`<div class="spot" id="sp"><div class="en">👆 Tap an example to explore it</div><div class="ar" >اضغط على مثال لاستكشافه</div></div>`;
+ $('#slide').innerHTML=h;$('#slide').className='card sl';void $('#slide').offsetWidth;
+ $('#dots').innerHTML=S.map((_,k)=>`<i class="${k==i?'on':''}"></i>`).join('');
+ $('#prev').disabled=i==0;$('#next').textContent=i==S.length-1?'Watch Video':'Next';prog();scrollTo(0,0)}
+function spot(el,e,n,a){$$('.chip').forEach(c=>c.classList.remove('on'));el.classList.add('on');$('#sp').innerHTML=`<div style="font-size:2.6rem">${e}</div><div class="en">${n}</div><div class="ar">${a}</div>`}
+$('#prev').onclick=()=>show(cur-1);$('#next').onclick=()=>cur==S.length-1?page('video'):show(cur+1);
+
+/* VIDEO */
+const robo=w=>`<svg class="rb" width="${w}" viewBox="0 0 100 130"><line x1="50" y1="8" x2="50" y2="22" stroke="#fff" stroke-width="3"/><circle cx="50" cy="7" r="6" fill="#ff9f1c"/><rect x="22" y="22" width="56" height="44" rx="14" fill="#fff"/><g class="bl"><circle cx="39" cy="42" r="7" fill="#0f9d8a"/><circle cx="61" cy="42" r="7" fill="#0f9d8a"/></g><circle cx="41" cy="40" r="2" fill="#fff"/><circle cx="63" cy="40" r="2" fill="#fff"/><path d="M40 56q10 8 20 0" stroke="#0f9d8a" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="28" y="70" width="44" height="40" rx="10" fill="#ff9f1c"/><circle cx="50" cy="90" r="8" fill="#0f9d8a"/><rect x="14" y="74" width="12" height="28" rx="6" fill="#fff"/><g class="wv"><rect x="74" y="74" width="12" height="28" rx="6" fill="#fff"/></g><rect x="34" y="112" width="12" height="14" rx="4" fill="#fff"/><rect x="54" y="112" width="12" height="14" rx="4" fill="#fff"/></svg>`;
+const ob=(e,n,a,d=0,c='',x='')=>`<div class="ob ${c}" style="animation:pop .6s ${d}s both,fl 3s ${d+1}s infinite;${x}"><b>${e}</b>${n}<div class="ar" style="color:#ffd9a0;font-size:.9em;margin:0">${a}</div></div>`;
+const ln=d=>`<div class="ln"><i style="animation-delay:${d}s"></i></div>`;
+const V=[
+["Meet Robo","قابل روبو",()=>`<div class="r2">${robo(95)}<svg width="130" viewBox="0 0 130 90" style="animation:pop .8s .6s both"><rect x="15" y="4" width="100" height="62" rx="8" fill="#fff"/><rect x="21" y="10" width="88" height="50" rx="4" fill="#0f9d8a"/><circle cx="65" cy="35" r="14" fill="#ff9f1c"/><text x="65" y="42" font-size="18" text-anchor="middle">⚙️</text><path d="M4 72h122l-10 12H14z" fill="#cdeee6"/></svg></div><div class="bub">Hello ${nmv()}! I'm Robo 👋</div>`,"Hi! I am Robo. Every computer needs an operating system.","مرحبًا! أنا روبو. كل كمبيوتر يحتاج إلى نظام تشغيل."],
+["What is an Operating System?","ما هو نظام التشغيل؟",()=>`<div class="r2" style="flex-wrap:nowrap">${ob("🧑‍💻","User","المستخدم")}${ln(0)}${ob('<span class="spin">⚙️</span>',"Operating System","نظام التشغيل",.5,"os")}${ln(.5)}<div>${ob("🔌","Hardware","الأجهزة",1)}<div style="height:6px"></div>${ob("📦","Software","البرامج",1.3)}</div></div><div class="bub">I am the interface!</div>`,"An operating system is an interface between the user and hardware and software.","نظام التشغيل هو واجهة بين المستخدم والأجهزة والبرامج."],
+["Key Functions","وظائف نظام التشغيل",()=>{const L=[["🎨","User interface","واجهة"],["🔧","Hardware","المكونات"],["▶️","Software","البرمجيات"],["🧠","Memory","الذاكرة"],["🛡️","Security","الأمان"],["🗂️","Files","الملفات"],["🙂","Easy tasks","مهام سهلة"]];return`<div class="ob os" style="animation:pop .6s both"><b style="display:inline;font-size:1.3rem">🧩</b> Operating System</div><div class="r2">${L.map((l,k)=>`<div class="ob" style="animation:pop .5s ${.3+k*.3}s both,gl .9s ${1+k*.9}s forwards"><b>${l[0]}</b>${l[1]}<div class="ar" style="color:inherit;font-size:.9em;margin:0">${l[2]}</div></div>`).join('')}</div>`},"It provides a user interface, manages hardware, runs software, manages memory, ensures security, and manages files.","يوفر واجهة للمستخدم، ويدير المكونات المادية والبرمجيات والذاكرة، ويضمن الأمن، ويدير الملفات."],
+["Computers and Phones","الكمبيوتر والهواتف",()=>`<div class="r2">${ob("🪟","Windows","Microsoft",0)}${ob("🍎","macOS","Apple",.3)}${ob("🐧","Linux","توزيعات",.6)}</div><div class="r2">${ob("🍏","iOS by Apple","من Apple",1.2)}${ob("🤖","Android by Google","من Google",1.5)}</div>${cr()}`,"Desktops and laptops use Windows, macOS and Linux. Smartphones use iOS and Android.","تستخدم الأجهزة المكتبية والمحمولة Windows وmacOS وLinux. وتستخدم الهواتف iOS وAndroid."],
+["More Smart Devices","أجهزة ذكية أخرى",()=>`<div class="r2">${ob("🗄️","Servers","الخوادم",0)}${ob("🎮","Gaming","الألعاب",.3)}${ob("📺","Smart TVs","التلفزيون",.6)}${ob("⌚","Wearables","القابلة للارتداء",.9)}${ob("📡","Network","الشبكة",1.2)}</div><div class="bub">All use operating systems!</div>${cr()}`,"Servers, gaming consoles, smart TVs, wearable devices and network devices use operating systems too.","الخوادم ووحدات الألعاب والتلفزيون الذكي والأجهزة القابلة للارتداء وأجهزة الشبكة تستخدم أنظمة تشغيل أيضًا."],
+["Cars and Embedded Systems","السيارات والأنظمة المدمجة",()=>`<div class="road"><span class="car">🚗</span></div><div class="r2">${ob("🧭","Navigation","الملاحة",.3)}${ob("🏧","ATM","الصراف الآلي",.6)}${ob('<span class="card3">💳</span>',"POS","نقاط البيع",.9)}</div>${cr()}`,"Cars, ATMs and POS terminals have embedded systems that use operating systems to run.","السيارات وأجهزة الصراف الآلي ومحطات نقاط البيع أنظمة مدمجة تستخدم أنظمة تشغيل لكي تعمل."],
+["Great Job!","أحسنت!",()=>Array.from({length:22},(_,i)=>`<i class="cf" style="left:${i*4.6}%;background:${['#ff9f1c','#fff','#22b573'][i%3]};animation-delay:${(i%7)*.4}s"></i>`).join('')+`<div class="r2"><div style="font-size:4rem;animation:pop .8s both">🏆</div>${robo(80)}</div><div class="bub">You did it! 🎉</div>`,"Operating systems run our digital world. Great job!","أنظمة التشغيل تدير عالمنا الرقمي. أحسنت!"]];
+const BG=['linear-gradient(135deg,#0b3b3c,#0f9d8a)','linear-gradient(135deg,#1e3a8a,#2563eb)','linear-gradient(135deg,#0b3b3c,#22b573)','linear-gradient(135deg,#7c2d12,#ff7a1a)','linear-gradient(135deg,#4c1d95,#8b5cf6)','linear-gradient(135deg,#0f172a,#0d9fb8)','linear-gradient(135deg,#0f9d8a,#ff9f1c)'];
+const cr=()=>`<div style="position:absolute;left:6px;bottom:4px">${robo(50)}</div>`;
+const SS=window.speechSynthesis||null;let vi=0,vt=0,vtm=null,voice=true;const DUR=9000;
+function scene(i){const v=V[i];$('#stage').style.background=BG[i];$('#stage').innerHTML=Array.from({length:8},(_,k)=>`<i class="bk" style="left:${k*13}%;width:${14+k%3*10}px;height:${14+k%3*10}px;animation-delay:${k*.7}s"></i>`).join('')+`<div class="ttl">${i+1}/${V.length} • ${v[0]} • ${v[1]}</div><div class="sc">${v[2]()}</div>`;$('#sub').innerHTML=bi(v[3],v[4]);
+ $('#vd').innerHTML=V.map((_,k)=>`<i class="${k==i?'on':''}" onclick="vjump(${k})"></i>`).join('');
+ try{if(SS){SS.cancel();if(voice){const u=new SpeechSynthesisUtterance(v[3]);u.lang='en-US';u.rate=.9;SS.speak(u)}}}catch(x){}}
+function vjump(k){vi=k;vt=0;$('#vp').style.width=(k/V.length*100)+'%';scene(k)}
+function vPlay(){if(vtm)return;if(vi>=V.length){vi=0;vt=0}if(vt==0)scene(vi);$('#vst').textContent='▶ Playing • جارٍ التشغيل';
+ vtm=setInterval(()=>{vt+=100;if(vt>=DUR){vt=0;vi++;if(vi>=V.length){vPause();vi=V.length-1;vt=DUR;$('#vst').textContent='✔ Finished • انتهى الفيديو';done.v=1;prog();$('#vp').style.width='100%';return}scene(vi)}
+ $('#vp').style.width=((vi*DUR+vt)/(V.length*DUR)*100)+'%'},100)}
+function vPause(){if(vtm){clearInterval(vtm);vtm=null;try{SS&&SS.cancel()}catch(x){}$('#vst').textContent='⏸ Paused • إيقاف مؤقت'}}
+function vRep(){vPause();vi=0;vt=0;vPlay()}
+$('#vplay').onclick=()=>{if(vi==V.length-1&&vt>=DUR){vRep()}else{vPlay()}};$('#vpause').onclick=vPause;$('#vrep').onclick=vRep;
+$('#vvoice').onclick=e=>{voice=!voice;e.target.textContent='🔊 Voice: '+(voice?'On':'Off');try{if(!voice&&SS)SS.cancel()}catch(x){}};
+scene(0);
+
+/* INFOGRAPHIC */
+const win='<svg width="30" height="30" viewBox="0 0 30 30"><path fill="#2563eb" d="M0 4l12-2v12H0zM14 2l16-2v14H14zM0 16h12v12L0 26zM14 16h16v14l-16-2z"/></svg>';
+const cols=["#0f9d8a","#ff7a1a","#2563eb","#22b573","#e5484d","#8b5cf6","#0d9fb8"];
+$('#ig').innerHTML=`<div style="text-align:center"><div style="font-size:1.8rem;font-weight:800;color:var(--p)">Operating Systems</div><div class="ar">نظم التشغيل</div></div>
+<h3>1 Definition • التعريف</h3><div class="dia"><div class="node"><b>🧑‍💻</b>User<div class="ar">المستخدم</div></div><span class="arr">⇄</span><div class="node os"><b>🧩</b>Operating System<div class="ar">نظام التشغيل</div></div><span class="arr">⇄</span><div class="node"><b>🔌📦</b>Hardware + Software<div class="ar">الأجهزة والبرامج</div></div></div>
+<div style="text-align:center">${bi("It is an interface between the user and hardware and software.","هو واجهة بين المستخدم والأجهزة والبرامج.")}</div>
+<h3>2 Functions • الوظائف</h3><div class="hub"><b>Key Functions of the Operating System</b><div class="ar">وظائف نظام التشغيل</div></div><div style="text-align:center;font-size:1.6rem;color:var(--p)">⬇ ⬇ ⬇</div>
+<div class="row">${F.map((f,k)=>`<div class="it" style="border-color:${cols[k]};background:${cols[k]}18"><b>${f[0]}</b><span style="color:${cols[k]};font-weight:800">${k+1}</span>${bi(f[1],f[2])}</div>`).join('')}</div>
+<h3>3 Examples • الأمثلة</h3><div class="row">${S.slice(3).map((s,k)=>`<div class="it" style="border-color:${cols[k%7]};background:${cols[k%7]}18"><b>${s.ic}</b><div class="en" style="color:${cols[k%7]}">${s.t}</div><div class="ar">${s.a}</div><div style="margin-top:6px;font-size:.82rem">${s.b[1].map(c=>c[1]).join(' • ')}</div></div>`).join('')}</div>
+<div style="display:flex;gap:14px;justify-content:center;align-items:center;margin-top:14px;font-weight:700">${win} Windows &nbsp; 🍎 macOS &nbsp; 🐧 Linux &nbsp; 🤖 Android</div>`;
+let z=1;const setz=v=>{z=Math.max(.4,Math.min(2,v));$('#ig').style.zoom=z};
+function fit(){setz(Math.min(1,($('#igw').clientWidth-4)/900))}
+$('#zi').onclick=()=>setz(z+.15);$('#zo').onclick=()=>setz(z-.15);$('#zr').onclick=fit;addEventListener('resize',()=>$('#info').classList.contains('on')&&fit());
+
+/* QUIZ */
+const Q=[
+["What is an operating system?","ما هو نظام التشغيل؟",["An interface between the user and hardware and software|واجهة بين المستخدم والأجهزة والبرامج","A type of printer|نوع من الطابعات","A computer screen|شاشة كمبيوتر"],0,"It is an interface between the user and hardware and software.","هو واجهة بين المستخدم والأجهزة والبرامج."],
+["Which one is NOT a function of the operating system?","أي مما يلي ليس من وظائف نظام التشغيل؟",["Manages memory|يدير الذاكرة","Cooks food|يطهو الطعام","Manages the file system|يدير نظام الملفات"],1,"The OS manages memory, files, hardware, software and security – not cooking.","نظام التشغيل يدير الذاكرة والملفات والأجهزة والبرامج والأمان وليس الطهي."],
+["iOS is the operating system of:","نظام iOS هو نظام تشغيل شركة:",["Google|جوجل","Apple|أبل","Microsoft|مايكروسوفت"],1,"iOS is made by Apple. Android is made by Google.","نظام iOS من شركة Apple ونظام Android من شركة Google."],
+["Which operating systems do servers use?","ما أنظمة التشغيل التي تستخدمها الخوادم؟",["Linux and Microsoft Windows Server|Linux وMicrosoft Windows Server","Tizen and webOS|Tizen وwebOS","iOS only|iOS فقط"],0,"Servers use Linux (various distributions) and Microsoft Windows Server.","تستخدم الخوادم Linux (بتوزيعاته المختلفة) وMicrosoft Windows Server."],
+["Which one is an operating system for Smart TVs?","أي مما يلي نظام تشغيل للتلفزيون الذكي؟",["macOS|macOS","Tizen|Tizen","Xbox|Xbox"],1,"Smart TVs use Android TV, Tizen and webOS.","التلفزيونات الذكية تستخدم Android TV وTizen وwebOS."],
+["POS terminals allow customers to:","محطات نقاط البيع تسمح للعملاء بـ:",["Pay for products from their bank account|دفع ثمن المشتريات من حسابهم البنكي","Drive cars|قيادة السيارات","Watch TV|مشاهدة التلفزيون"],0,"They deduct the cost from the bank account instead of using cash.","تخصم الثمن من الحساب البنكي بدلًا من الدفع نقدًا."],
+["True or False: Gaming consoles do not use operating systems.","صح أم خطأ: وحدات تحكم الألعاب لا تستخدم أنظمة تشغيل.",["True|صح","False|خطأ"],1,"False. They have operating systems tailored for gaming and multimedia applications.","خطأ. فهي تحتوي على أنظمة تشغيل مصممة لتطبيقات الألعاب والوسائط المتعددة."],
+["True or False: Routers and switches use operating systems to manage network settings and security features.","صح أم خطأ: أجهزة التوجيه والمحولات تستخدم أنظمة التشغيل لإدارة إعدادات الشبكة وميزات الأمان.",["True|صح","False|خطأ"],0,"True. Network devices use operating systems for settings and security.","صح. أجهزة الشبكة تستخدم أنظمة التشغيل لإدارة الإعدادات والأمان."],
+["True or False: Smart watches use operating systems specifically designed for their unique functions.","صح أم خطأ: الساعات الذكية تستخدم أنظمة تشغيل مصممة خصيصًا لوظائفها.",["True|صح","False|خطأ"],0,"True. Wearable devices have their own special operating systems.","صح. الأجهزة القابلة للارتداء لها أنظمة تشغيل خاصة بها."],
+["True or False: macOS is used on smartphones and tablets.","صح أم خطأ: نظام macOS يُستخدم في الهواتف الذكية والأجهزة اللوحية.",["True|صح","False|خطأ"],1,"False. macOS is used on computers; smartphones use iOS or Android.","خطأ. macOS يُستخدم في أجهزة الكمبيوتر، أما الهواتف فتستخدم iOS أو Android."]];
+let qi=0,sc=0,ans=false;
+function qShow(){ans=false;if(qi>=Q.length){const ok=sc>=6,n=nmv();if(ok)done.q=1;prog();
+ $('#qbox').innerHTML=ok?`<div class="qe">🎉</div><h2 style="text-align:center">Congratulations, ${n}! You passed!</h2><div class="ar" style="text-align:center">مبروك يا ${n}! لقد نجحت!</div><div class="en" style="text-align:center;margin:6px 0">Score: ${sc} / ${Q.length}</div>
+ <div class="cert" id="cert"><div style="font-size:2.6rem">🏅</div><div style="font-weight:800;color:var(--p);font-size:1.2rem">Certificate of Achievement</div><div class="ar" style="text-align:center">شهادة تقدير</div><p>This is to certify that</p><div class="ar" style="text-align:center">تشهد هذه الشهادة بأن</div><h1>${n}</h1><p>has successfully passed the quiz of</p><div class="ar" style="text-align:center">قد اجتاز بنجاح اختبار</div><p><b>Unit 1 – Lesson 3: Operating Systems</b></p><div class="ar" style="text-align:center">الوحدة الأولى – الدرس الثالث: نظم التشغيل</div><p>ICT – Prep 1 • Score ${sc}/${Q.length} • ${new Date().toLocaleDateString('en-GB')}</p></div>
+ <div class="vb"><button class="btn y" onclick="window.print()">🖨️ Print / Save as PDF</button><button class="btn" onclick="qi=0;sc=0;qShow()">Try Again</button><button class="btn" onclick="page('home')">Finish</button></div>`
+ :`<div class="qe">📚</div><h2 style="text-align:center">Don't worry, ${n}!</h2><div class="ar" style="text-align:center">لا تقلق يا ${n}!</div><div class="en" style="text-align:center;margin-top:8px">Your score: ${sc} / ${Q.length}. You need ${6} to pass. Review the lesson and try again.</div><div class="ar" style="text-align:center">نتيجتك: ${sc} من ${Q.length}. درجة النجاح ${6}. راجع شرح الدرس وأعد المحاولة.</div>
+ <div class="vb"><button class="btn y" onclick="page('learn');show(0)">📖 Explain the Lesson Again</button><button class="btn" onclick="qi=0;sc=0;qShow()">Try Again</button></div>`;return}
+ const q=Q[qi];$('#qbox').innerHTML=`<div class="ar" style="text-align:left;direction:ltr">Question ${qi+1} / ${Q.length} • السؤال ${qi+1}</div><div class="q">${bi(q[0],q[1])}</div><div class="opts">${q[2].map((o,k)=>{const[e,a]=o.split('|');return`<button class="o" onclick="pick(${k},this)">${e}<div class="ar">${a}</div></button>`}).join('')}</div><div id="fb"></div><div class="vb"><button class="btn" id="qn" style="display:none" onclick="qi++;qShow()">${qi==Q.length-1?'Finish':'Next'}</button></div>`}
+function pick(k,el){if(ans)return;ans=true;const q=Q[qi],ok=k==q[3];if(ok)sc++;$$('.o').forEach((o,j)=>{if(j==q[3])o.classList.add('ok');else if(j==k)o.classList.add('no')});
+ $('#fb').innerHTML=`<div class="fb"><b>${ok?'✅ Correct! • إجابة صحيحة':'❌ Not quite • إجابة خاطئة'}</b>${bi(q[4],q[5])}</div>`;$('#qn').style.display='inline-block'}
+function qStart(){$('#qbox').innerHTML=`<div class="qe">✍️</div><h2 style="text-align:center">Enter your name to start the quiz</h2><div class="ar" style="text-align:center">اكتب اسمك لبدء الاختبار</div><input id="qnm" class="nm" maxlength="30" value="${esc(studentName)}" placeholder="Your name • اسمك" style="border-color:var(--p)"><div class="err" id="qerr" style="color:var(--r);text-align:center"></div><div class="en" style="text-align:center">10 questions • Pass mark: 6/10</div><div class="ar" style="text-align:center">10 أسئلة • درجة النجاح: 6 من 10</div><div class="vb"><button class="btn y" onclick="qGo()">Start Quiz</button></div>`}
+function qGo(){const v=$('#qnm').value.trim();if(!v){$('#qerr').textContent='Please enter your name • من فضلك اكتب اسمك';return}studentName=v;qrun=true;qi=0;sc=0;qShow()}
+qStart();
+show(0);
+</script></body></html>
